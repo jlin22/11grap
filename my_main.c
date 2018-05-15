@@ -118,7 +118,7 @@ void my_main() {
 	  tmp = make_translate(op[i].op.move.d[0],op[i].op.move.d[1], op[i].op.move.d[2]);
 	  matrix_mult(peek(systems), tmp);
 	  copy_matrix(tmp, peek(systems));
-	  tmp->lastcol;
+	  tmp->lastcol = 0;
 	  break;
 	case ROTATE:
 	  switch((int)(op[i].op.rotate.axis)){
@@ -134,7 +134,7 @@ void my_main() {
 	  }
 	  matrix_mult(peek(systems), tmp);
 	  copy_matrix(tmp, peek(systems));
-	  tmp->lastcol;
+	  tmp->lastcol = 0;
 	  break;
 	case SCALE:
 	  tmp = make_scale(op[i].op.scale.d[0],op[i].op.scale.d[1], op[i].op.scale.d[2]);
